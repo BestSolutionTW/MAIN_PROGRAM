@@ -2197,6 +2197,11 @@ message '***********************************************************************
                         MOV     A,00000000B
                         MOV     SADC0,A
                         CLR     SADC1
+                        ;-CLEAR BANK3 280H~2FFH
+                        MOV     A,3
+                        MOV     BP,A
+                        MOV     A,80H
+                        CALL    CLEAR_RAM
                         ;-CLEAR BANK2 280H~2FFH
                         MOV     A,2
                         MOV     BP,A
